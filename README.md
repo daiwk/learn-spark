@@ -10,7 +10,7 @@
 
 mac的话，把这个repositories文件拷到~/.sbt/下就行~~，其他操作系统不知道了。。
 
-好像没啥用..好像还是去https://repo1.maven.org/maven2/org/xxxx这种地方下截。。
+好像没啥用..好像还是去```https://repo1.maven.org/maven2/org/xxxx```这种地方下截。。
 
 然后执行下
 
