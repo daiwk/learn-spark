@@ -2,6 +2,7 @@
 export spark_submit=~/Documents/spark-2.4.0-bin-hadoop2.7/bin/spark-submit
 
 sbt package
+[[ $? -ne 0 ]] && exit 1
 
 #class=SimpleApp
 class=Rating

@@ -16,7 +16,7 @@ mac的话，把这个repositories文件拷到~/.sbt/下就行~~，其他操作�
 
 sbt run  -Dsbt.override.build.repos=true
 
-接下来我们的demo是参考的[http://spark.apache.org/docs/2.1.0/quick-start.html#self-contained-applications](http://spark.apache.org/docs/2.1.0/quick-start.html#self-contained-applications)
+接下来我们的demo是参考的[http://spark.apache.org/docs/2.2.0/quick-start.html#self-contained-applications](http://spark.apache.org/docs/2.2.0/quick-start.html#self-contained-applications)
 
 所以demo.sbt文件是：
 
@@ -27,7 +27,11 @@ version := "1.0"
 
 scalaVersion := "2.11.7"
 
-libraryDependencies += "org.apache.spark" %% "spark-core" % "2.1.0"
+libraryDependencies ++= Seq(
+    "org.apache.spark" %% "spark-core" % "2.2.0",
+    "org.apache.spark" %% "spark-mllib" % "2.2.0",
+    "org.apache.spark" %% "spark-sql" % "2.2.0"
+                    )
 ```
 
 所以我们的run_scala.sh长这样：
@@ -44,4 +48,17 @@ ${spark_submit} \
 ## pyspark
 
 不用蛋疼的sbt了，直接run_pyspark.sh就行啦
+
+
+## mllib
+
+### als
+
+demo代码在./src/main/scala/Rating.scala中，参考的是[https://zhuanlan.zhihu.com/p/24220475](https://zhuanlan.zhihu.com/p/24220475)并针对spark 2.2.0做了改动。。
+
+数据集用的[https://grouplens.org/datasets/movielens/](https://grouplens.org/datasets/movielens/)的小数据集，把./ml-latest-small/ratings.csv.origin的第一行删了（每列的名字），得到./ml-latest-small/ratings.csv
+
+有时会出现rmse是Nan的，参考[https://stackoverflow.com/questions/43544815/why-spark-ml-als-algorithm-print-rmse-nan](https://stackoverflow.com/questions/43544815/why-spark-ml-als-algorithm-print-rmse-nan)
+
+因此，参考其中的答案，对spark2.2.0，设置了```model.setColdStartStrategy("drop")```
 
