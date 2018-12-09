@@ -5,7 +5,7 @@ import org.apache.spark.sql.SparkSession
   * TF-IDF
   */
 object extract {
-  val spark=SparkSession.builder().master("local").appName("TF-IDF").getOrCreate()
+  val spark=SparkSession.builder.master("local").appName("TF-IDF").getOrCreate()
   import spark.implicits._
   def main(args: Array[String]): Unit = {
     val soureceData= spark.createDataFrame(Seq(

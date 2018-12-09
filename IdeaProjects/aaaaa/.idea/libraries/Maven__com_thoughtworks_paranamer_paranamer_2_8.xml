@@ -1,7 +1,7 @@
 <component name="libraryTable">
-  <library name="Maven: com.thoughtworks.paranamer:paranamer:2.7">
+  <library name="Maven: com.thoughtworks.paranamer:paranamer:2.8">
     <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/com/thoughtworks/paranamer/paranamer/2.7/paranamer-2.7.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/thoughtworks/paranamer/paranamer/2.8/paranamer-2.8.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$MAVEN_REPOSITORY$/com/thoughtworks/paranamer/paranamer/2.7/paranamer-2.7-javadoc.jar!/" />
