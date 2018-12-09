@@ -99,3 +99,15 @@ only showing top 20 rows
 
 
 ```
+
+
+### idea maven project
+
+直接把https://github.com/daiwk/learn-spark/tree/master/IdeaProjects/aaaaa 这个import进去，
+记得确保
+
+右键 open module settings->Libraries，找到Maven: com.thoughtworks.paranamer:paranamer:2.7这个，然后classes那边把2.7的给-掉，把2.8的jar给+上
+
+然后就是maven 更新下依赖，并reimport一下
+
+然后run
